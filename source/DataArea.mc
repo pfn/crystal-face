@@ -120,7 +120,7 @@ class DataArea extends Ui.Drawable {
 						time = time[:hour] + ":" + time[:min] + time[:amPm];
 						shouldDrawGoalValues = false;
 					} else {
-						time = ".";
+						time = "";
 					}
 				}
 
@@ -129,14 +129,16 @@ class DataArea extends Ui.Drawable {
 				time = "...";
 			}
 
-			dc.setColor(gMonoLightColour, Gfx.COLOR_TRANSPARENT);
-			dc.drawText(
-				locX + (width / 2),
-				mRow2Y,
-				gNormalFont,
-				time,
-				Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
-			);
+			if (time.length() > 0) {
+				dc.setColor(gMonoLightColour, Gfx.COLOR_TRANSPARENT);
+				dc.drawText(
+					locX + (width / 2),
+					mRow2Y,
+					gNormalFont,
+					time,
+					Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+				);
+			}
 
 		}
 
