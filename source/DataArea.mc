@@ -120,7 +120,7 @@ class DataArea extends Ui.Drawable {
 						time = time[:hour] + ":" + time[:min] + time[:amPm];
 						shouldDrawGoalValues = false;
 					} else {
-						time = "@";
+						time = ".";
 					}
 				}
 
